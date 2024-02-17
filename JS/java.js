@@ -1,6 +1,39 @@
-                                                                       //*------------------------START------------------------//
-                                                                            //---------------------------------------------//
-                                                                          //?----------------- Product Page ----------------//
+//*------------------------START------------------------//
+//---------------------------------------------//
+//?----------------- NavBar ----------------//
+//-----------------------------------------//
+
+document.getElementById("label1").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementById("New-Arrivals-Section").scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 400);
+});
+document.getElementById("label2").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementById("Trendy-Page").scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 400);
+});
+document.getElementById("label3").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementById("OurProducts").scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 400);
+});
+document.getElementById("label4").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementById("Deals-OF-Month").scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 400);
+});
+//-----------------------------------------//
+//!-----------------------------------------//
+//?----------------- Product Page ----------------//
 //-----------------------------------------//
 document.addEventListener("DOMContentLoaded", function () {
   var productsContainer = document.querySelector(".PRODUCTS");
@@ -63,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //-----------------------------------------//
 //!-----------------------------------------//
 
-                                                                       //?----------------- Filter ----------------//
+//?----------------- Filter ----------------//
 //-----------------------------------------//
 const Products = document.querySelector(".Our-Products-Section");
 //-------------------------------------------------------------//
@@ -155,7 +188,7 @@ OffButton.addEventListener("click", () => {
 //-----------------------------------------//
 //!-----------------------------------------//
 //-----------------------------------------------//
-                                                                       //?-------- Countdown-Container ------------//
+//?-------- Countdown-Container ------------//
 //-----------------------------------------//
 const targetDate = new Date();
 targetDate.setDate(targetDate.getDate() + 3);
@@ -196,7 +229,7 @@ const interval = setInterval(() => {
 //-----------------------------------------//
 //!-----------------------------------------//
 
-                                                                       //?--------Link----------------------//
+//?--------Link----------------------//
 //-----------------------------------//
 {
   function addClickListener(elementId) {
@@ -220,7 +253,7 @@ const interval = setInterval(() => {
 //----------------------------------------//
 //!--------------------------------------//
 
-                                                                       //?--------POPup All Products------------//
+//?--------POPup All Products------------//
 //--------------------------------------//
 function openCartPopup() {
   var overlay = document.getElementById("overlay");
@@ -240,7 +273,7 @@ function closeCartPopup() {
 //----------------------------------------//
 //!--------------------------------------//
 
-                                                                       //?--------Scroll-Right & Left------------//
+//?--------Scroll-Right & Left------------//
 //----------------------------------------//
 //-----------------------------------------------//
 function scrollRight(element, amount) {
@@ -292,7 +325,7 @@ function scrollProductsLeft3() {
 //----------------------------------------//
 //!--------------------------------------//
 
-                                                                       //?-------- POPup Item----------------------//
+//?-------- POPup Item----------------------//
 //----------------------------------------//
 //-----------------------------------------------//
 function openModal(event, imageElement) {
@@ -362,7 +395,7 @@ function buyProduct2() {
 }
 //----------------------------------------//
 //!--------------------------------------//
-                                                                       //?--------POPup Item-counter------------//
+//?--------POPup Item-counter------------//
 //---------------------------------------//
 const min = document.querySelector(".minus"),
   plu = document.querySelector(".plus"),
@@ -402,7 +435,7 @@ mi.addEventListener("click", () => {
 //----------------------------------------//
 //!--------------------------------------//
 //-----------------------------------------------//
-                                                                       //?-------- POPup ALL Products--------------//
+//?-------- POPup ALL Products--------------//
 //-----------------------------------------//
 function calculateTotal() {
   var total = 0;
@@ -545,4 +578,14 @@ function popNAVbarclose() {
   popNAVbarClose.style.display = "none";
 }
 
-                                                                       //*------------------------END------------------------//
+const items = document.querySelectorAll('.navbar input[type="radio"]');
+items.forEach((item) => {
+  item.addEventListener("change", function () {
+    items.forEach((item) => {
+      item.nextElementSibling.nextElementSibling.style.visibility = "hidden";
+    });
+    this.nextElementSibling.nextElementSibling.style.visibility = "visible";
+  });
+});
+
+//*------------------------END------------------------//
