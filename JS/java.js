@@ -1,6 +1,38 @@
-//*------------------------START------------------------//
+//*-------------------------------------------------------------------------------------------------------------START------------------------//
 //---------------------------------------------//
-//?----------------- NavBar ----------------//
+//---------------------------------------------//
+//---------------------------------------------//
+//?---------------------------------------------------------------------------------------------------------- Product-Offers ----------------//
+//-----------------------------------------//
+document.querySelectorAll(".PR-s").forEach((div) => {
+  div.addEventListener("click", () => {
+    const selectedImage = window
+      .getComputedStyle(div)
+      .backgroundImage.replace(/^url\(["']?/, "")
+      .replace(/["']?\)$/, "");
+    const imageContainers = document.querySelectorAll(".Rec60, .Rec70");
+    const currentBackgrounds = Array.from(imageContainers).map((img) =>
+      window
+        .getComputedStyle(img)
+        .backgroundImage.replace(/^url\(["']?/, "")
+        .replace(/["']?\)$/, "")
+    );
+    imageContainers.forEach(
+      (img, i) => (img.style.backgroundImage = `url('${selectedImage}')`)
+    );
+    div.style.backgroundImage = `url('${currentBackgrounds[0]}')`;
+    document
+      .querySelector(".Deals-OF-month")
+      .classList.remove("image-2", "image-3");
+    if (selectedImage.includes("PR-2.jpeg")) {
+      document.querySelector(".Deals-OF-month").classList.add("image-2");
+    } else if (selectedImage.includes("PR-3.jpeg")) {
+      document.querySelector(".Deals-OF-month").classList.add("image-3");
+    }
+  });
+});
+//---------------------------------------------//
+//?---------------------------------------------------------------------------------------------------------- NavBar ----------------//
 //-----------------------------------------//
 
 document.getElementById("label1").addEventListener("click", function () {
@@ -33,7 +65,7 @@ document.getElementById("label4").addEventListener("click", function () {
 });
 //-----------------------------------------//
 //!-----------------------------------------//
-//?----------------- Product Page ----------------//
+//?---------------------------------------------------------------------------------------------------------- Product Page ----------------//
 //-----------------------------------------//
 document.addEventListener("DOMContentLoaded", function () {
   var productsContainer = document.querySelector(".PRODUCTS");
@@ -96,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //-----------------------------------------//
 //!-----------------------------------------//
 
-//?----------------- Filter ----------------//
+//?---------------------------------------------------------------------------------------------------------- Filter ----------------//
 //-----------------------------------------//
 const Products = document.querySelector(".Our-Products-Section");
 //-------------------------------------------------------------//
@@ -188,7 +220,7 @@ OffButton.addEventListener("click", () => {
 //-----------------------------------------//
 //!-----------------------------------------//
 //-----------------------------------------------//
-//?-------- Countdown-Container ------------//
+//?------------------------------------------------------------------------------------------------- Countdown-Container ------------//
 //-----------------------------------------//
 const targetDate = new Date();
 targetDate.setDate(targetDate.getDate() + 3);
@@ -229,31 +261,7 @@ const interval = setInterval(() => {
 //-----------------------------------------//
 //!-----------------------------------------//
 
-//?--------Link----------------------//
-//-----------------------------------//
-{
-  function addClickListener(elementId) {
-    document.getElementById(elementId).addEventListener("click", (event) => {
-      event.preventDefault();
-
-      location.href();
-    });
-  }
-  addClickListener("insta");
-  addClickListener("whats");
-  addClickListener("face");
-  addClickListener("shop");
-  addClickListener("vec");
-  addClickListener("buy-n");
-  addClickListener("facebook");
-  addClickListener("twitter");
-  addClickListener("instagram");
-  addClickListener("youtube");
-}
-//----------------------------------------//
-//!--------------------------------------//
-
-//?--------POPup All Products------------//
+//?-------------------------------------------------------------------------------------------------POPup All Products------------//
 //--------------------------------------//
 function openCartPopup() {
   var overlay = document.getElementById("overlay");
@@ -273,7 +281,7 @@ function closeCartPopup() {
 //----------------------------------------//
 //!--------------------------------------//
 
-//?--------Scroll-Right & Left------------//
+//?-------------------------------------------------------------------------------------------------Scroll-Right & Left------------//
 //----------------------------------------//
 //-----------------------------------------------//
 function scrollRight(element, amount) {
@@ -284,6 +292,7 @@ function scrollLeft(element, amount) {
   element.scrollBy({ left: -amount, behavior: "smooth" });
 }
 //-----------------------------------------------//
+
 const comment = document.getElementById("Comment2");
 const productsContainer = document.getElementById("productsContainer");
 const productsContainer2 = document.getElementById("productsContainer2");
@@ -298,19 +307,27 @@ function scrollCommentLeft() {
 }
 //-----------------------------------------------//
 function scrollProductsRight() {
-  scrollRight(productsContainer, 432);
+  const screenWidth = window.innerWidth;
+  const scrollAmount = screenWidth;
+  scrollRight(productsContainer, scrollAmount);
 }
 //-----------------------------------------------//
 function scrollProductsLeft() {
-  scrollLeft(productsContainer, 430);
+  const screenWidth = window.innerWidth;
+  const scrollAmount = screenWidth;
+  scrollLeft(productsContainer, scrollAmount);
 }
 //-----------------------------------------------//
 function scrollProducts2Right() {
-  scrollRight(productsContainer2, 432);
+  const screenWidth = window.innerWidth;
+  const scrollAmount = screenWidth;
+  scrollRight(productsContainer2, scrollAmount);
 }
 //-----------------------------------------------//
 function scrollProducts2Left() {
-  scrollLeft(productsContainer2, 430);
+  const screenWidth = window.innerWidth;
+  const scrollAmount = screenWidth;
+  scrollLeft(productsContainer2, scrollAmount);
 }
 //-----------------------------------------------//
 function scrollProductsRight3() {
@@ -325,7 +342,7 @@ function scrollProductsLeft3() {
 //----------------------------------------//
 //!--------------------------------------//
 
-//?-------- POPup Item----------------------//
+//?------------------------------------------------------------------------------------------------- POPup Item----------------------//
 //----------------------------------------//
 //-----------------------------------------------//
 function openModal(event, imageElement) {
@@ -395,7 +412,7 @@ function buyProduct2() {
 }
 //----------------------------------------//
 //!--------------------------------------//
-//?--------POPup Item-counter------------//
+//?-------------------------------------------------------------------------------------------------POPup Item-counter------------//
 //---------------------------------------//
 const min = document.querySelector(".minus"),
   plu = document.querySelector(".plus"),
@@ -435,7 +452,7 @@ mi.addEventListener("click", () => {
 //----------------------------------------//
 //!--------------------------------------//
 //-----------------------------------------------//
-//?-------- POPup ALL Products--------------//
+//?------------------------------------------------------------------------------------------------- POPup ALL Products--------------//
 //-----------------------------------------//
 function calculateTotal() {
   var total = 0;
@@ -531,7 +548,7 @@ function buyProduct(productImage) {
     </div>
     <p class="PriceTotal" dir="ltr">${totalPrice.toFixed(0)} L.E</p>
     <div class="L1"></div>
-    <button class="deleteButton" onclick="deleteProduct(this)"><img src="Group.png"></button>
+    <button class="deleteButton" onclick="deleteProduct(this)"><img src="./Style/ICON/X.png"></button>
 `;
 
   itemsContainer.appendChild(newItemContainer);
@@ -567,6 +584,7 @@ function popNAVbar22() {
   navbar.style.display = "block";
   popupBackground.style.display = "block";
   popNAVbarClose.style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 function popNAVbarclose() {
   const popupBackground = document.querySelector(".popup-background");
@@ -576,6 +594,7 @@ function popNAVbarclose() {
   navbar.style.display = "none";
   popupBackground.style.display = "none";
   popNAVbarClose.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 const items = document.querySelectorAll('.navbar input[type="radio"]');
@@ -587,5 +606,6 @@ items.forEach((item) => {
     this.nextElementSibling.nextElementSibling.style.visibility = "visible";
   });
 });
-
-//*------------------------END------------------------//
+//---------------------------------------------//
+//---------------------------------------------//
+//*-----------------------------------------------------------------------------------------------------------------END------------------------//
