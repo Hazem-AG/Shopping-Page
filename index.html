@@ -114,31 +114,34 @@
    <div class="Icon">
     <div class="contacts">
 
-      <a href="#">
+      <a href="#" target="_blank">
         <div class="instgram"  alt="Instagram" id="insta">
           <img class="instgram2" src="./Style/ICON/ins2.png"/>
         </div>
       </a>
 
-      <a href="#" id="whats">
+      <a href="#" target="_blank" id="whats">
         <div class="whatsapp" alt="WhatsApp" id="whats">
            <img class="whatsapp2" src="./Style/ICON/wha2.png"/>
         </div>
       </a>
 
-      <a href="#">
+      <a href="#" target="_blank">
         <div class="facebook"  alt="Facebook" id="face">
           <img class="facebook2" src="./Style/ICON/fac2.png"/>
         </div>
       </a>
     </div> 
-    <a href="#" id="shop">
-      <div class="shop-button">
-        <div class="rectangle-1"></div>
-        <div class="rectangle-2"></div>
-        <p class="text4">تسوق</p>
-      </div>
-    </a>
+    <div class="shop">
+      <a  href="#" target="_blank" id="shop">
+        <div class="shop-button">
+          <div class="rectangle-1"></div>
+          <div class="rectangle-2"></div>
+          <p class="text4">تسوق</p>
+        </div>
+      </a>
+    </div>
+    
     <div class="Featured"></div>
    </div>
   </div>
@@ -432,27 +435,27 @@
   <!-------------------------------------------->
   <!--?-------------------Deals_of_the_month---->
   <!-------------------------------------------->
-  <dive class="Deals-OF-month" id="Deals-OF-Month">
+  <div class="Deals-OF-month" id="Deals-OF-Month">
     <div class="Fram-Offer">
-      <div class="Rec60">
-        <div class="PR-img">
-          <img class="Rec-PR" src="./Style/Photos/PR-1.png"></div>
+      <div>
+        <div class="Rec60" style="background-image: url('./Style/Photos/PR-0.png')"></div>
+        <div class="Rec70" style="background-image: url('./Style/Photos/PR-0.png')"></div>
       </div>
-      <div class="Rec70"></div>
+      
+      
       <div class="More-products">
-        <div class="PR1">
-            <img class="PR1" src="./Style/Photos/PR-3.jpeg">
-        </div>
-        <div class="PR2">
-            <img class="PR2" src="./Style/Photos/PR-2.jpeg">
-        </div>
+         
+        <div class="PR-s" style="background-image: url('./Style/Photos/PR-2.jpeg')"></div>
+        <div class="PR-s" style="background-image: url('./Style/Photos/PR-3.jpeg')"></div>
+
         <div class="PR-More">
-          <a href="#">
+          <a href="#" target="_blank">
             <img class="Group" src="./Style/ICON/Vector.png" id="vec">
             </a>
         </div>
+
       </div>
-      <a href="#" id="buy-n">
+      <a href="#" target="_blank" id="buy-n" onclick="buyProduct(document.getElementById('productImage').src);">
         <div class="Buy-Naw-button">
           <div class="rectangle-1">
           </div>
@@ -464,16 +467,22 @@
     </div>
 <p class="H1">عرض الشهر</p>
 <p class="TX1">افضل المبيعات</p>
-<p class="TX2">هودي وسويت شيرت بطبعة اونلاين رقبة برباط - للرجال</p>
+<p class="TX2" id="PR01">هودي  بطبعة اونلاين رقبة برباط - للرجال</p>
+<p class="TX2" id="PR02">بنطلون  بطبعة اونلاين رقبة برباط - للرجال</p>
+<p class="TX2" id="PR03">سويت شيرت بطبعة اونلاين رقبة برباط - للرجال</p>
 <p class="TX3">
   مما يسمح لك بضبطها وفقًا لتفضيلاتك. مصنوع من مواد عالية الجودة توفر راحة فائقة ومتانة طويلة الأمد. يمكن ارتداؤه في
   الأوقات الباردة كقطعة أنيقة ودافئة، سواءً كان ذلك للنشاطات الرياضية أو للإطلالات اليومية. إضافة رائعة لمجموعة ملابسك
   تضمن الأناقة والراحة
 </p>
 <div class="descount" dir="ltr">
-  <p class="after">300 L.E</p>
+  <p class="after" id="PR01">300 L.E</p>
+  <p class="after" id="PR02">200 L.E</p>
+  <p class="after" id="PR03">500 L.E</p>
   <span class="LI"></span>
-  <p class="befor">850 L.E</p>
+  <p class="befor" id="PR01">850 L.E</p>
+  <p class="befor" id="PR02">750 L.E</p>
+  <p class="befor" id="PR03">950 L.E</p>
 </div>
 
   <div class="countdown-container" dir="rtl">
@@ -490,7 +499,7 @@
       <p>ثانية</p>
     </div>
   </div>
-  </dive>
+  </div>
   <!--!----------------------------------------->
   <!-------------------------------------------->
   <!--?-----------------------Instagram_page---->
@@ -525,7 +534,7 @@
   <!-------------------------------------------->
    <div class="Review-Section">
     <h1>أراء العملاء</h1>
-    <p>مما يسمح لك بضبطها وفقًا لتفضيلاتك. مصنوع من مواد عالية الجودة توفر راحة فائقة ومتانة طويلة الأمد. يمكن ارتداؤه في
+    <p class="P-TX">مما يسمح لك بضبطها وفقًا لتفضيلاتك. مصنوع من مواد عالية الجودة توفر راحة فائقة ومتانة طويلة الأمد. يمكن ارتداؤه في
     الأوقات الباردة كقطعة أنيقة ودافئة، سواءً كان ذلك للنشاطات الرياضية أو للإطلالات اليومية. إضافة رائعة لمجموعة ملابسك
     تضمن الأناقة والراحة</p>
     <div class="Sec-Nam">
@@ -1165,25 +1174,26 @@
   <!---end------------------------------Product popUp----->
   <div class="popup-background">
     <div class="navbar">
-      <br><a href="#New-Arrivals-Section" class="Item1" onclick="popNAVbarclose()">كل جديد
-        <div class="Rectangle37"></div>
+      <a href="#New-Arrivals-Section" class="Item1" onclick="popNAVbarclose()">كل جديد
+        
       </a>
-      <br><a href="#Trendy-Page" class="Item2" onclick="popNAVbarclose()"> أحدث الصيحات </a>
+      <br><div class="Rectangle37"></div>
+      <br><a href="#Trendy-Page" class="Item2"  onclick="popNAVbarclose()"> أحدث الصيحات </a>
       <br><a href="#OurProducts" class="Item3" onclick="popNAVbarclose()">التسوق </a>
       <br><a href="#Deals-OF-Month" class="Item4" onclick="popNAVbarclose()">عرض الشهر</a>
     
     </div>
     <div class="CONTACT2">
-      <a href="#">
-        <img src="./Style/ICON/Facebook1.png" id="facebook"/>
+      <a href="#" target="_blank">
+        <img src="./Style/ICON/Facebook1.png"  id="facebook"/>
       </a>
-      <a href="#">
+      <a href="#" target="_blank">
         <img src="./Style/ICON/Twitter1.png" id="twitter"/>
       </a>
-      <a href="#">
+      <a href="#" target="_blank">
         <img src="./Style/ICON/Instagram1.png" id="instagram"/>
       </a>
-      <a href="#">
+      <a href="#" target="_blank">
         <img src="./Style/ICON/YouTube1.png" id="youtube"/>
       </a>
       
