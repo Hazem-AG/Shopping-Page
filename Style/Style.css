@@ -3865,6 +3865,7 @@ input {
     position: absolute;
     width: 100%;
     right: 30px;
+    z-index: 20;
   }
 
   .Our-Products-Section .Product-Name {
@@ -3974,9 +3975,7 @@ input {
   .Shopping .Line2 {
     position: absolute;
     top: 2672px;
-  }
-    /*----Our-Products-Section----*/
- 
+  } 
     /*----Deals-OF-month----*/
   .Deals-OF-month {
     height: 1069px;
